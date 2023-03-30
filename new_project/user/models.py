@@ -18,9 +18,9 @@ class User(AbstractUser):
     role = models.CharField(max_length=50, choices=Role.choices)
     def create_address(self):
         self.address_line1 = input("Enter address: ")
-        self.city = city
-        self.state = state
-        self.pincode = pincode
+        self.city = input("Enter city: ")
+        self.state = input("Enter state: ")
+        self.pincode = input("Enter pincode: ")
 
     def save(self, *args, **kwargs):
         if not self.pk:
